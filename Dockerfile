@@ -1,2 +1,7 @@
 FROM debian:bookworm-slim
-CMD ["true"]
+COPY vise-agent /usr/local/bin/vise-agent
+COPY echo_agent_fixture /usr/local/bin/echo_agent_fixture
+RUN chmod +x /usr/local/bin/vise-agent /usr/local/bin/echo_agent_fixture
+ENV VISE_AGENT_CMD=/usr/local/bin/echo_agent_fixture
+EXPOSE 8791
+CMD ["/usr/local/bin/vise-agent"]
