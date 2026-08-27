@@ -8,3 +8,4 @@ CMD ["/usr/local/bin/vise-agent"]
 # rebuild marker: force a fresh content hash (build-avoidance keys only on
 # vise.toml+Dockerfile content, not the full build context -- a binary-only
 # change like this one otherwise silently reuses a stale image)
+# rebuild marker 2: echo_agent_fixture now returns a real sessionId
